@@ -30,7 +30,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   #Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit => [width, height, gravity = ::Magick::CenterGravity]
+    process :resize_to_fill => [200, 200, gravity = ::Magick::CenterGravity]
   end
 
   def auto
