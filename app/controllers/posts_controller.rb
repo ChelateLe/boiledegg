@@ -1,8 +1,15 @@
 class PostsController < ApplicationController
   def new
+    @post = Post.new
   end
 
   def create 
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to "/users/#{current_user.id}"
+    else
+      render :new
+    end
   end
 
   private
