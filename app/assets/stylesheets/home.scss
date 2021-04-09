@@ -37,19 +37,42 @@ form input[type="submit"] {
 
 /* header */
 header {
-  height: 70px;
+  height: 30px;
   position: absolute;
   z-index: 1;
   width: 100%;
+  background-color: orange;
 }
 
 .header-logo {
   float: left;
   padding-left: 10px;
+  font-weight: 500;
+  a {
+    color: white;
+  }
+}
+
+.header-menus {
+  float: right;
+  display: flex;
+  li{
+    padding-right: 30px;
+  }
 }
 
 /* top */
 h1 {
   padding-top: 200px;
   text-align: center;
+}
+
+.contents {
+  padding: 50px 0 500px 0;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
+  .kaite, .kakuzo, .dekita{
+    background-color: white;
+  }
 }

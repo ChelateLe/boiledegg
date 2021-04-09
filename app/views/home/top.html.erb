@@ -1,14 +1,36 @@
 <header>
   <div class="header-logo">
-    <a href="/">BoiledEgg</a>
+    <%= link_to 'BoiledEgg' %>
   </div>
   <ul class="header-menus">
     <li>
-      <a href="/about">このサイトの使い方</a>
+      <%= link_to 'このサイトの使い方', about_path %>
     </li>
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <li><%= link_to '新規登録', new_user_registration_path %></li>
+    <% end %>
   </ul>
 </header>
 
 <h1>
   トップページだよ
 </h1>
+
+<div class= "contents">
+  <div class= "kaite">
+    <p>これ書いて</p>
+    <%= link_to '投稿一覧を見に行く！', "#" %>
+  </div>
+  <div class= "kakuzo">
+    <p>これ書きます</p>
+    <%= link_to '自分の絵を投稿する！', "#" %>
+  </div>
+  <div class= "dekita">
+    <p>できた！</p>
+    <%= link_to '合作一覧を見に行く！', "#" %>
+  </div>
+</div>
