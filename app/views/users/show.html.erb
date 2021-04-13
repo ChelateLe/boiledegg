@@ -1,7 +1,9 @@
 <%= render "shared/header" %>
 
-<%= @nickname + "さんのページ" %>
-<%= link_to 'プロフィールを変更する',"#" %>
-<%= link_to '自分の絵を投稿する！', new_post_path %>
+<div class= "profile">
+  <%= @nickname + "さんのページ" %>
+  <%= link_to 'プロフィールを変更する', edit_user_registration_path %>
+  <%= link_to '自分の絵を投稿する！', new_post_path %>
+</div>
 
 <%= render partial: "posts/post", collection: @posts %>
