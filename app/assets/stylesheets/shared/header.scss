@@ -1,0 +1,24 @@
+header {
+  height: 30px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: orange;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 10px;
+  font-weight: 500;
+  a {
+    color: white;
+  }
+}
+
+.header-menus {
+  float: right;
+  display: flex;
+  li{
+    padding-right: 30px;
+  }
+}

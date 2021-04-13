@@ -1,0 +1,19 @@
+/* top */
+h1 {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.info {
+  padding: 50px 0 500px 0;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
+  .kaite, .kakuzo, .dekita{
+    background-color: white;
+  }
+}
+
+.post-size {
+  float: left;
+}
