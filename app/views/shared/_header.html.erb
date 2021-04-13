@@ -4,14 +4,14 @@
   </div>
   <ul class="header-menus">
     <li>
-      <%= link_to 'このサイトの使い方', about_path %>
+      <%= link_to 'このサイトの使い方', about_path , class: "toabout"%>
     </li>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "/users/#{current_user.id}" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to current_user.nickname + "さんのマイページ", "/users/#{current_user.id}" , class: "tonickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "tologout" %></li>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path %></li>
-      <li><%= link_to '新規登録', new_user_registration_path %></li>
+      <li><%= link_to 'ログイン', new_user_session_path , class: "tologin" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path , class: "toregist" %></li>
     <% end %>
   </ul>
 </header>
