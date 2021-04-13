@@ -4,13 +4,11 @@
 .info-top {
   background-color: $Yellow;
   height: 400px;
-  text-align: center;
 }
 
 .top-text {
+  padding-top: 50px;
   color: $Gray;
-  h1{
-  }
 }
 
 .info-list {
@@ -21,8 +19,4 @@
   .kaite, .kakuzo, .dekita{
     background-color: white;
   }
-}
-
-.post-size {
-  float: left;
 }
