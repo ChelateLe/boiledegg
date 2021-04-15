@@ -7,7 +7,7 @@
       <%= link_to 'このサイトの使い方', about_path , class: "toabout"%>
     </li>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname + "さんのマイページ", "/users/#{current_user.id}" , class: "tonickname" %></li>
+      <li><%= link_to 'マイページ', "/users/#{current_user.id}" , class: "tonickname" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "tologout" %></li>
     <% else %>
       <li><%= link_to 'ログイン', new_user_session_path , class: "tologin" %></li>

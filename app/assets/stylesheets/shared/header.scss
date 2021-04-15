@@ -1,5 +1,18 @@
 @import "color";
 
+@mixin header-menus {
+  text-decoration: none;
+  font-weight: 800;
+  padding: 20px;
+  color: $Orange;
+  background-color: white;
+  border: solid 2px $Yellow;
+  border-radius: 50%;
+  &:hover {
+    background-color: $Yellow;
+  }
+}
+
 header {
   height: 50px;
   position: absolute;
@@ -39,7 +52,10 @@ header {
       &:hover {
         color: darken($Yellow, 10%);
       }
-    }
+    }  
+    .tologin, .toregist, .tonickname, .tologout {
+      @include header-menus;
+      }
   }
 }
 
