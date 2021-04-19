@@ -1,9 +1,24 @@
 <%= render "shared/header" %>
 
-<div class= "profile">
-  <%= @nickname + "さんのページ" %>
-  <%= link_to 'プロフィールを変更する', edit_user_registration_path %>
-  <%= link_to '自分の絵を投稿する！', new_post_path %>
+<div class="post-header">
+  <p><%= @nickname + "さんの投稿一覧" %></p>
 </div>
 
-<%= render partial: "posts/post", collection: @posts %>
+<div class="user-post">
+  <%= render partial: "posts/post", collection: @posts %>
+</div>
+
+<div class="mypage-footer">
+  <ul class="profile">
+      <li>
+        <%= @nickname + "さんのページ" %>
+      </li>
+      <% if current_user == @user %>
+        <li><%= link_to 'プロフィールを変更する', edit_user_registration_path %></li>
+        <li><%= link_to '自分の絵を投稿する！', new_post_path %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path , class: "tologin" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path , class: "toregist" %></li>
+      <% end %>
+  </ul>
+</div>

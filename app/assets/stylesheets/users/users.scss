@@ -1,3 +1,28 @@
+@import "color";
+
+.post-header{
+  background-color: $Lyellow;
+  font-weight: 800;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px orange;
+}
+
+.user-post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $Yellow;
+}
+
+.mypage-footer {
+  height: 100px;
+  width: 100%;
+  background-color: $Orange;
+}
+
 .profile {
-  padding-top: 100px;
+  display: flex;
+  
 }
