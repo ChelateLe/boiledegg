@@ -15,3 +15,22 @@
  */
 
  @import "reset";
+ @import "color";
+
+ .paginate-detail {
+   text-align: center;
+   background-color: $Lyellow;
+   height: 50px;
+   padding-top: 10px;
+   a {
+     text-decoration: none;
+     padding: 10px;
+     color: orange;
+     border: solid 1px yellow;
+     background-color: white; 
+     border-radius: 20px;
+   }
+   .current {
+    color: $Orange;
+  }
+ }
