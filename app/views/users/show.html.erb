@@ -10,8 +10,8 @@
           <li><%= link_to 'プロフィールを変更する', edit_user_registration_path %></li>
           <li><%= link_to '自分の絵を投稿する！', new_post_path %></li>
         <% else %>
-          <li><%= link_to 'ログイン', new_user_session_path , class: "tologin" %></li>
-          <li><%= link_to '新規登録', new_user_registration_path , class: "toregist" %></li>
+          <li><%= link_to 'メッセージを送る', "#" , class: "" %></li>
+          <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
         <% end %>
     </ul>
   </div>

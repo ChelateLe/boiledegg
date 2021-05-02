@@ -5,8 +5,12 @@
 }
 
 .mypage-side {
-  width: 40vw;
+  width: 20vw;
+  height: 100vh;
   background-color: orange;
+  position: fixed;
+  left: 0;
+  padding-top: 80px;
 }
 
 .user-post {
@@ -14,6 +18,7 @@
   flex-wrap: wrap;
   align-items: center;
   background-color: $Yellow;
-  padding-top: 10px;
+  padding-top: 60px;
+  padding-left: 320px;
 }
 
