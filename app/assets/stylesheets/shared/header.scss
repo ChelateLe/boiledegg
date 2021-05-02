@@ -16,7 +16,7 @@
 header {
   height: 60px;
   width: 100vw;
-  background: linear-gradient(80deg, $Orange, orangered);
+  background: linear-gradient(100deg, $Orange 0%, yellow 35%, orange 100%);
   position: fixed;
   top: 0;
   z-index: 10;
