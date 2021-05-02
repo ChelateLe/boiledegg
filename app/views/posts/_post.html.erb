@@ -1,9 +1,9 @@
 <div class= "post-wrapper">
   <%= link_to image_tag(post.image, class: :card_img ), "#" %>
   <div class="post-body">
-    <%= link_to post.title.truncate(20), post_path(post.id), method: :get, class: :post_title %>
+    <%= link_to post.title.truncate(35), post_path(post.id), method: :get, class: :post_title %>
     <p class="post-text">
-      <%= post.text.truncate(38) %>
+      <%= post.text.truncate(150) %>
     </p>
     <%= link_to "投稿者" + post.user.nickname, "/users/#{post.user.id}", method: :get, class: :post_user %>
   </div>  

@@ -2,12 +2,12 @@
 
 /* top */
 .info-top {
-  background-color: $Jyellow;
+  background: linear-gradient(-100deg, $Yellow 0%, $Jyellow 100%);
   height: 600px;
 }
 
 .top-text {
-  padding-top: 50px;
+  padding-top: 100px;
   color: white;
   .heading-text {
     font-size: 60px;

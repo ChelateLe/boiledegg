@@ -1,12 +1,12 @@
 @import "color";
 
-.post-header{
-  background-color: $Lyellow;
-  font-weight: 800;
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px orange;
+.mypage {
+  display: flex;
+}
+
+.mypage-side {
+  width: 40vw;
+  background-color: orange;
 }
 
 .user-post {
@@ -14,15 +14,6 @@
   flex-wrap: wrap;
   align-items: center;
   background-color: $Yellow;
+  padding-top: 10px;
 }
 
-.mypage-footer {
-  height: 100px;
-  width: 100%;
-  background-color: $Orange;
-}
-
-.profile {
-  display: flex;
-  
-}
