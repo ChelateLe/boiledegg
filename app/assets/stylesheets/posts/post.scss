@@ -1,10 +1,11 @@
 @import "color";
 
 .post-wrapper {
+  padding: 10px;
   margin: 10px 10px 20px 10px;
   height: 300px;
   width: 35vw;
-  background-color: $Lyellow;
+  background: radial-gradient(ellipse at center, white 0%,$Lyellow 40%, white 100%);
   border-radius: 10%;
   border: solid 1px $Yellow;
   display: flex;
@@ -15,8 +16,9 @@
   height: 270px;
   margin: 10px;
   background-color: white;
+  border-radius: 20%;
 }
 
 .post-body {
-
+  opacity: 0.7;
 }
