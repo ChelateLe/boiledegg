@@ -9,10 +9,22 @@
         <% if current_user == @user %>
           <li><%= link_to 'プロフィールを変更する', edit_user_registration_path %></li>
           <li><%= link_to '自分の絵を投稿する！', new_post_path %></li>
-          <li><%= link_to 'メッセージを確認する！', "#" %></li>
+          <li><%= link_to 'メッセージを確認する', rooms_path %></li>
         <% else %>
-          <li><%= link_to 'メッセージを送る', "#" , class: "" %></li>
-          <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
+          <% if @isRoom == true %>
+            <li><%= link_to 'メッセージを送る', "/rooms/#{@roomId}",class: "" %></li>
+            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
+          <% else %>
+            <li>
+              <%= form_with model: @room, local: true do |f| %>
+                <%= fields_for @entry do |e| %>
+                  <%= e.hidden_field :user_id, :value => @user.id %>
+                  <%= f.submit "メッセージを送る" %>
+                <% end %>
+              <% end %>
+            </li>
+            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
+          <% end %>
         <% end %>
     </ul>
   </div>

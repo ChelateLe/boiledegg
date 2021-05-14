@@ -1,0 +1,6 @@
+<% @rooms.each do |room| %>
+  <%= link_to room_path(room) do%>
+    <%= opponent_user(room) %>
+    <%= most_new_message_preview(room) %>
+  <% end %>
+<% end %>
