@@ -1,0 +1,14 @@
+<%= form_with(model: @collabo, local: true) do |f|%>
+  <%= f.label :image, "投稿する絵を選択してね" %>
+  <%= f.file_field :image %>
+
+  <%= f.label :title, "タイトル" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :text, "絵の説明、コメント" %>
+  <%= f.text_area :text %>
+
+  <%= f.collection_select :originator_id, User.all.where.not(id: current_user.id), :id , :nickname, include_blank: "ユーザーを選択して下さい" %>
+
+  <%= f.submit "投稿する！" %>
+<% end %>

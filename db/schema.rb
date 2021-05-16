@@ -34,10 +34,14 @@ ActiveRecord::Schema.define(version: 2021_05_14_030004) do
   end
 
   create_table "collabos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "painter_id"
+    t.bigint "originator_id"
     t.string "title", null: false
     t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["originator_id"], name: "index_collabos_on_originator_id"
+    t.index ["painter_id"], name: "index_collabos_on_painter_id"
   end
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,6 +92,8 @@ ActiveRecord::Schema.define(version: 2021_05_14_030004) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "collabos", "users", column: "originator_id"
+  add_foreign_key "collabos", "users", column: "painter_id"
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
   add_foreign_key "messages", "rooms"

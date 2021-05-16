@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :posts 
   resources :messages, only: :create
   resources :rooms, only: [:create, :show, :index]
+  resources :collabos 
 end

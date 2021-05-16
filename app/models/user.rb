@@ -7,7 +7,7 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_many :posts, dependent: :destroy
-  has_many :collabos, through: :user_collabos
+  has_many :collabos
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :rooms, through: :entries
