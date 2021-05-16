@@ -4,6 +4,15 @@
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, class: "user-icon" %>
+      <% else %>
+        <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+      <% end %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill">
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
+      </button>
+
       <div class="field">
         <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
