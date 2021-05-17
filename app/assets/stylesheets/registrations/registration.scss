@@ -1,0 +1,69 @@
+@import "reset";
+@import "color";
+
+.row {
+  background: linear-gradient(-200deg, orange 0%, white 80%, $Jyellow 100%);
+}
+
+.devise-container {
+  text-align: center;
+}
+
+.registration {
+  font-size: 60px;
+  font-weight: 800;
+  text-shadow: 2px 2px white;
+  color: $Orange;
+  display: inline-block;
+  padding: 5px;
+  margin: 10px;
+}
+
+.field {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.image-set {
+  margin-top: 10px;
+}
+
+.image-info {
+  color: gray;
+  font-size: 14px;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.field {
+  display: inline-block;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.form-title {
+  font-size: 20px;
+  color: black;
+}
+
+.form-area {
+  text-align: center;
+}
+
+.actions {
+  font-size: 30px;
+  background-color: orange;
+  color: white;
+  margin-top: 20px;
+  font-weight: 800;
+  display: inline-block;
+  width: 50%;
+  &:hover{
+    background-color: yellow;
+    color: orange;
+  }
+}

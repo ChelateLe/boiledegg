@@ -1,43 +1,41 @@
 <div class="contents row">
-  <div class="container">
-    <h2>Sign up</h2>
+  <div class="devise-container">
+    <div class="registration">Welcome!!</div>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
+      <%# <%= devise_error_messages! %> 
 
-      <% if @user.image? %>
-        <%= image_tag @user.image.thumb.url, class: "user-icon" %>
-      <% else %>
+      <div class="devise-image">
         <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
-      <% end %>
-      <button type="button" class="btn btn-outline-secondary rounded-pill">
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
-      </button>
-
-      <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+        <div class="image-set">プロフィール画像を設定しましょう！</div>
+        <button type="button" class="btn orange">
+          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "image-select-btn" %>
+        </button>
+        <div class="image-info">プロフィール画像を設定しない場合、自動的にこちらのタマゴの画像になります。</div>
+        <div class="image-info">（画像を選択した場合は上部の画像同様、円形にくり抜かれて表示されます。）</div>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.label :nickname, "ニックネーム(20文字以内)【必須】" , class: "form-title" %> <em></em><br />
+        <%= f.text_field :nickname, autofocus: true, maxlength: "20", class: "form-area" %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :email, "メールアドレス【必須】", class: "form-title" %><br />
+        <%= f.email_field :email, class: "form-area" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password, "パスワード(6文字以上)【必須】", class: "form-title" %>
+        <%= f.password_field :password, autocomplete: "off", class:"form-area" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "確認のため、もう一度パスワードを入力してください【必須】", class: "form-title" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-area" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "BoiledEggを始める！" %>
       </div>
     <% end %>
   </div>
