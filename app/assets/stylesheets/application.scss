@@ -11,11 +11,16 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require material_icons
  *= require_self
  */
 
+ @import "materialize";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  @import "reset";
  @import "color";
+ 
 
  .paginate-detail {
    text-align: center;
@@ -37,4 +42,12 @@
 
  .user-icon {
    border-radius: 100px;
+ }
+
+ .unlike-btn {
+   color: orange;
+ }
+
+ .like-btn {
+   color: gray;
  }

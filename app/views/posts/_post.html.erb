@@ -6,5 +6,8 @@
       <%= post.text.truncate(150) %>
     </p>
     <%= link_to "投稿者" + post.user.nickname, "/users/#{post.user.id}", method: :get, class: :post_user %>
-  </div>  
+  </div>
+  <div id="like-<%= post.id %>">
+    <%= render partial: "like", locals: { post: post } %>
+  </div>
 </div>
