@@ -9,6 +9,7 @@
   border-radius: 10%;
   border: solid 1px $Yellow;
   display: flex;
+  position: relative;
 }
 
 .card_img {
@@ -21,4 +22,15 @@
 
 .post-body {
   opacity: 0.7;
+}
+
+.post-text {
+  color: gray;
+  height: 200px;
+}
+
+.likes {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
