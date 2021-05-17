@@ -1,7 +1,7 @@
 <div class= "post-wrapper">
   <%= link_to image_tag(post.image, class: :card_img ), post_path(post.id), method: :get %>
   <div class="post-body">
-    <%= link_to post.title.truncate(10), post_path(post.id), method: :get, class: :"post_title black-text" %>
+    <%= link_to post.title.truncate(12), post_path(post.id), method: :get, class: :"post_title black-text" %>
     <div class="post-text">
       <%= post.text.truncate(150) %>
     </div>
