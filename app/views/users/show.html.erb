@@ -3,14 +3,21 @@
 <div class="mypage">
   <div class="mypage-side">
     <ul class="profile">
-        <li>
-          <%= @nickname + "さんのページ" %>
+        <li class="side-name">
+          <%= @nickname + "さんのマイページ" %>
         </li>
+
+        <% if @user.image? %>
+          <%= image_tag @user.image.thumb.url, class: "side-icon" %>
+        <% else %>
+          <%= image_tag "default.jpg", alt: "user-icon", size: "200", class: "user-icon" %>
+        <% end %>
+
         <% if current_user == @user %>
-          <li><%= link_to 'プロフィールを変更する', edit_user_registration_path %></li>
-          <li><%= link_to '自分の絵を投稿する！', new_post_path %></li>
-          <li><%= link_to 'メッセージを確認する', rooms_path %></li>
-          <li><%= link_to 'コラボ作品として投稿！', new_collabo_path %></li>
+          <li><%= link_to '・プロフィールを変更する', edit_user_registration_path,class: "side-menu black-text" %></li>
+          <li><%= link_to '・自分の絵を投稿する', new_post_path,class: "side-menu black-text" %></li>
+          <li><%= link_to '・メッセージを確認する', rooms_path,class: "side-menu black-text" %></li>
+          <li><%= link_to '・コラボ作品を投稿する', new_collabo_path,class: "side-menu black-text" %></li>
         <% else %>
           <% if @isRoom == true %>
             <li><%= link_to 'メッセージを送る', "/rooms/#{@roomId}",class: "" %></li>
