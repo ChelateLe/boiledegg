@@ -1,0 +1,12 @@
+@import "color";
+
+.index-contents {
+  padding-top: 80px;
+  background: linear-gradient(200deg,white 0%, $Gold 60%, white 100%);
+}
+
+.index-post {
+  display: flex;
+  flex-wrap: wrap;
+}
+

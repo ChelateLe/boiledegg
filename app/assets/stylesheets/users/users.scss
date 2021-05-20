@@ -5,43 +5,50 @@
 }
 
 .mypage-side {
-  width: 20vw;
+  width: 30vw;
   height: 100vh;
-  background: linear-gradient(200deg,$Yellow 0%, white 80%, orange 100%);
+  background-color: $Gold;
   position: fixed;
   left: 0;
-  padding-top: 80px;
+  padding-top: 60px;
+  .side-name {
+    font-weight: 700;
+    margin-left: 30px;
+    color: $Orange;
+    font-size: 30px;
+  }
+  .side-icon {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 40%;
+  }  
   li {
-    margin-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
   }
   .side-menu {
-    padding: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px orange;
     &:hover{
-      background-color: orange;
-      display: inline-block;
-      width: 20vw;
+      background-color: yellow;
     }
   }
 }
 
 .user-post {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  background: linear-gradient(-200deg, gray 0%, white 80%, orange 100%);
-  padding-top: 60px;
-  padding-left: 320px;
+  background: linear-gradient(-200deg,$White 0%, white 50%,$Gold 100%);
+  padding-top: 80px;
+  padding-left: 420px;
 }
 
-.side-name {
-  font-weight: 700;
-  color: orange;
-  font-size: 20px;
-  margin-left: 30px;
-}
-
-.side-icon {
-  margin-left: 30px;
-}
 
 
