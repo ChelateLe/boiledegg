@@ -20,18 +20,18 @@
           <li><%= link_to 'コラボ作品を投稿する', new_collabo_path,class: "side-menu orange-text" %></li>
         <% else %>
           <% if @isRoom == true %>
-            <li><%= link_to 'メッセージを送る', "/rooms/#{@roomId}",class: "" %></li>
-            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
+            <li><%= link_to 'メッセージを送る', "/rooms/#{@roomId}",class: "side-menu orange-text" %></li>
+            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "side-menu orange-text" %></li>
           <% else %>
             <li>
               <%= form_with model: @room, local: true do |f| %>
                 <%= fields_for @entry do |e| %>
                   <%= e.hidden_field :user_id, :value => @user.id %>
-                  <%= f.submit "メッセージを送る" %>
+                  <%= f.submit "メッセージを送る", class: "side-menu orange-text" %>
                 <% end %>
               <% end %>
             </li>
-            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "" %></li>
+            <li><%= link_to @nickname + 'さんの合作一覧', "#" , class: "side-menu withbutton orange-text" %></li>
           <% end %>
         <% end %>
     </ul>
