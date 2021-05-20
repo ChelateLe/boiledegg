@@ -10,7 +10,7 @@
         <% if @user.image? %>
           <%= image_tag @user.image.thumb.url, size: "300", class: "side-icon" %>
         <% else %>
-          <%= image_tag "default.jpg", alt: "user-icon", size: "300", class: "user-icon" %>
+          <%= image_tag "default.jpg", alt: "user-icon", size: "300", class: "side-icon" %>
         <% end %>
 
         <% if current_user == @user %>
