@@ -4,7 +4,7 @@
   </div>
   <ul class="header-menus">
     <li>
-      <%= link_to 'このサイトの使い方', about_path , class: "toabout"%>
+      <%= link_to '「BoiledEgg」とは？', about_path , class: "toabout"%>
     </li>
     <% if user_signed_in? %>
       <li><%= link_to 'マイページ', "/users/#{current_user.id}" , class: "tonickname" %></li>
