@@ -1,12 +1,89 @@
+@import "color";
+
+.about-header {
+  background-color: orange;
+  padding-top: 80px;
+  color: white;
+}
+
 .about-what {
-  padding: 80px 0px 20px 40px;
-  background-color: yellow;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 60;
 }
 
 .about-info {
-  padding: 40px 0px 80px 0px;
-  background-color: orange;
-  color: white;
-  display: flex;
-  justify-content: space-around;
+  color: orange;
+  font-size: 20px;
+}
+
+.case-left {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: 70px;
+  width: 30%;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    left: -35px;
+    bottom: 15px;
+    width: 30px;
+    height: 30px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    left: -55px;
+    bottom: 10px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.case-right {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: 800px;
+  width: 30%;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    right: -35px;
+    bottom: 15px;
+    width: 30px;
+    height: 30px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    right: -55px;
+    bottom: 10px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.about-below {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+  background-color: $Orange;
 }
