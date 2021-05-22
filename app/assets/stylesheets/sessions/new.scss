@@ -1,0 +1,9 @@
+@import "reset";
+@import "color";
+
+.contents-row {
+  background: linear-gradient(-200deg, orange 0%, white 80%, $Jyellow 100%);
+  height: 100vh;
+  width: 100vw;
+  padding-top: 50px;
+}
