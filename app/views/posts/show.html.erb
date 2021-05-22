@@ -38,7 +38,7 @@
     </li>
   </ul>
   <% if user_signed_in? %>
-    <%= form_with(model: [@post, @comment], local: true) do |f|%>
+    <%= form_with(model: [@post, @comment], class:'post-comment', local: true) do |f|%>
       <div class="field">
         <%= f.label :text, "コメント" %><br />
         <%= f.text_field :text %>

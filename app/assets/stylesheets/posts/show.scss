@@ -53,5 +53,11 @@
 }
 
 .post-comments {
-  background-color: yellow;
+  background: linear-gradient(100deg, white 0%, $Lyellow 45%, white 100%);
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.comment-list {
+  display: block;
 }
