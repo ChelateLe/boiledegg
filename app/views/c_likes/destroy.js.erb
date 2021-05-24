@@ -1,0 +1,3 @@
+$(function() {
+  $("#like-<%= @collabo.id %>").html("<%= j(render partial: 'collabos/like', locals: { collabo: @collabo }) %>");
+});

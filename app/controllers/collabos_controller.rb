@@ -15,11 +15,13 @@ class CollabosController < ApplicationController
   end
 
   def index
-    @collabos = Collabo.all
+    @collabos = Collabo.all.order(created_at: "DESC").page(params[:page]).per(15)
   end
 
   def show
     @collabo = Collabo.find(params[:id])
+    @comment = CComment.new
+    @comments = @collabo.c_comments.includes(:user)
   end
 
   private

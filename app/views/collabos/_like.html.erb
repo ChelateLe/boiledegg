@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <% if CLike.find_by(user_id: current_user.id, collabo_id: collabo.id) %>
+    <%= link_to "/collabos/#{collabo.id}/likes", class: "like-link", method: :delete, remote: true do%>
+      <i class="fa fa-heart unlike-btn"></i> 
+    <% end %>  
+  <% else %>
+    <%= link_to "/collabos/#{collabo.id}/likes", class: "like-link", method: :post, remote: true do%>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>  
+  <% end %>
+  <%= collabo.c_likes.length %>
+<% end %>

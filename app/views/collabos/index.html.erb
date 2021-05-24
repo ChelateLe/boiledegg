@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+
+<div class="index-contents">
+  <div class="index-posts">
+    <div class="index-post">
+      <%= render partial: "collabo", collection: @collabos %>
+    </div>
+  </div>
+</div>
+
+<div class="paginate-detail"><%= paginate @collabos %></div>

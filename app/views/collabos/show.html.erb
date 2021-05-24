@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<div class="post-show">
+  <div class="image-part">
+    <div class="post-image">
+      <%= image_tag @collabo.image, :size => '600x500'%>
+    </div>
+  </div>
+  <div class="post-about">
+    <div class="about-profile">
+      <div class="about-title">
+        <%= @collabo.title %>
+      </div>
+      <div class="about-nickname">  
+        <%= "Painter：" + @collabo.painter.nickname %>
+          <div id="like-<%= @collabo.id %>", class="likes">
+            <%= render partial: "collabos/like", locals: { collabo: @collabo } %>
+          </div>
+      </div>
+    </div>  
+  </div>
+  <div class="post-texts">
+    <div class="about-text">
+      <%= @collabo.text %>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="post-comments">
+  <ul class="comments-lists">
+    <li class="comments-list">
+      <% @comments.each do |comment| %>
+        <%= comment.text %>
+        <%= link_to comment.user.nickname + "さん", "/users/#{comment.user.id}", class: :comment_user %>
+      <% end %>  
+    </li>
+  </ul>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@collabo, @comment], class:'post-comment', local: true) do |f|%>
+      <div class="field">
+        <%= f.label :text, "コメント" %><br />
+        <%= f.text_field :text %>
+      </div>
+      <div class="actions">
+        <%= f.submit "送信する", class: :form__btn  %>
+      </div>
+    <% end %> 
+  <% end %>
+</div>
