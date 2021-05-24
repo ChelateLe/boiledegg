@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/' => 'home#top'
   get 'about' => 'home#about'
+  post '/posts/:post_id/likes' => "likes#create"
+  delete '/posts/:post_id/likes' => "likes#destroy"
 
   devise_for :users
 
@@ -11,6 +13,4 @@ Rails.application.routes.draw do
   resources :messages, only: :create
   resources :rooms, only: [:create, :show, :index]
   resources :collabos
-  post '/posts/:post_id/likes' => "likes#create"
-  delete '/posts/:post_id/likes' => "likes#destroy"
 end

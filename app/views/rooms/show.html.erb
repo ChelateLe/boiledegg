@@ -1,9 +1,11 @@
-<h1>DM</h1>
+<%= render "shared/header" %>
 
-<h4>参加者</h4>
-<% @entries.each do |e| %>
-  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.email%>さん</a></strong></h5>
-<% end %>
+<div class="chat-header">
+  <p>このチャットルームの参加者</p>
+  <% @entries.each do |e| %>
+    <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.email%>さん</a></strong></h5>
+  <% end %>
+</div>
 
 <hr>
 <% if @messages.present? %>
