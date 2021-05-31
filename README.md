@@ -1,24 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ----------------   | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| encrypted_password | string | null: false               |
+| email              | string | null: false, unique: true |
+| image              | string |                           |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :posts, dependent: :destroy
+- has_many :collabos
+- has_many :messages, dependent: :destroy
+- has_many :entries, dependent: :destroy
+- has_many :rooms, through: :entries
+- has_many :comments
+- has_many :likes
 
-* Configuration
+## posts テーブル
 
-* Database creation
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| title         | string     | null: false                    |
+| string        | text       |                                |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_one :purchase_record
+- has_one_attached :image
 
-* Services (job queues, cache servers, search engines, etc.)
+## collabos テーブル
 
-* Deployment instructions
+| Column     | Type         | Options                                      |
+| ---------- | ------------ | -------------------------------------------- |
+| painter    | references   | null: false, foreign_key: {to_table: :users} |
+| originator | references   | null: false, foreign_key: {to_table: :users} |
+| title      | string       | null: false                                  |
+| text       | text         |                                              |
 
-* ...
+### Association
+
+- belongs_to :user
+
+## rooms テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+
+### Association
+
+-
