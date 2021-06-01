@@ -1,9 +1,10 @@
-# README
+# BoiledEgg 
+puts "'BoiledEgg'はお絵かき投稿共有サービスです。"
 
 ## users テーブル
 
 | Column             | Type   | Options                   |
-| ----------------   | ------ | ------------------------- |
+| ------------------ | ------ | ------------------------- |
 | nickname           | string | null: false               |
 | encrypted_password | string | null: false               |
 | email              | string | null: false, unique: true |
@@ -21,36 +22,118 @@
 
 ## posts テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| title         | string     | null: false                    |
-| string        | text       |                                |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| title  | string     | null: false       |
+| text   | string     |                   |
 
 ### Association
 
 - belongs_to :user
-- has_one :purchase_record
 - has_one_attached :image
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## collabos テーブル
 
-| Column     | Type         | Options                                      |
-| ---------- | ------------ | -------------------------------------------- |
-| painter    | references   | null: false, foreign_key: {to_table: :users} |
-| originator | references   | null: false, foreign_key: {to_table: :users} |
-| title      | string       | null: false                                  |
-| text       | text         |                                              |
+| Column     | Type         | Options                         |
+| ---------- | ------------ | ------------------------------- |
+| painter    | references   | foreign_key: {to_table: :users} |
+| originator | references   | foreign_key: {to_table: :users} |
+| title      | string       | null: false                     |
+| text       | text         |                                 |
+
+### Association
+
+- belongs_to :painter, class_name: "User", foreign_key: "painter_id"
+- belongs_to :originator, class_name: "User", foreign_key: "originator_id"
+- has_one_attached :image
+- has_many :c_comments, dependent: :destroy
+- has_many :c_likes, dependent: :destroy
+
+## rooms テーブル
+
+| Column | Type | Options |
+| ------ | ---- | ------- |
+
+### Association
+
+- has_many :messages, dependent: :destroy
+- has_many :entries, dependent: :destroy
+- has_many :users, through: :entries
+
+## Entries テーブル
+
+| Column | Type         | Options     |
+| ------ | ------------ | ----------- |
+| user   | references   | null: false |
+| room   | references   | null: false |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :room
 
-## rooms テーブル
+## messages テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| title  | string     | null: false       |
+| text   | text       |                   |
 
 ### Association
 
--
+- belongs_to :user
+- belongs_to :room
+
+## comments テーブル
+
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| post   | references | foreign_key: true |
+| text   | text       | null: false       |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+### likes テーブル
+
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| post   | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## c_comments テーブル
+
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| user    | references | foreign_key: true |
+| collabo | references | foreign_key: true |
+| text    | text       | null: false       |
+
+### Association
+
+- belongs_to :user
+- belongs_to :collabo
+
+### c_likes テーブル
+
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| user    | references | foreign_key: true |
+| collabo | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :collabo
