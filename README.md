@@ -1,5 +1,6 @@
-# BoiledEgg 
-puts "'BoiledEgg'はお絵かき投稿共有サービスです。"
+# ✏️BoiledEgg の README
+
+# このアプリケーションについて
 
 ## users テーブル
 
