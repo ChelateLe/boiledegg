@@ -1,8 +1,15 @@
-# ✏️BoiledEgg の README
+# 📙README is HERE!
 
-# このアプリケーションについて
+# 📖アプリケーションの概要
+## 💻アプリケーション名：【BoiledEgg】
+## 🚖アクセス方法: 【IPアドレス（13.114.6.83）にアクセス】
+## 📚使用言語・ライブラリ:【Ruby,HTML,Sass,Javascript(jQuery)】
+## 🎁フレームワーク:【Ruby on rails(6.0.3.6)】  
 
-## users テーブル
+# テーブル情報
+<details>
+<summary>テーブル一覧</summary>
+### users テーブル
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
@@ -11,7 +18,7 @@
 | email              | string | null: false, unique: true |
 | image              | string |                           |
 
-### Association
+#### Association
 
 - has_many :posts, dependent: :destroy
 - has_many :collabos
@@ -138,3 +145,4 @@
 
 - belongs_to :user
 - belongs_to :collabo
+</details>
