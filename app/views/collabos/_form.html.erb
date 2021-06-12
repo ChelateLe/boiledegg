@@ -1,14 +1,26 @@
-<%= form_with(model: @collabo, local: true) do |f|%>
-  <%= f.label :image, "投稿する絵を選択してね" %>
-  <%= f.file_field :image %>
+<div class="form">
+  <%= form_with(model: @collabo, local: true) do |f|%>
+    <div class="form-image">
+      <%= f.label :image, "投稿する絵を選択　→" %>
+      <%= f.file_field :image %>
+    </div>
 
-  <%= f.label :title, "タイトル" %>
-  <%= f.text_field :title %>
+    <div class="form-title">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
 
-  <%= f.label :text, "絵の説明、コメント" %>
-  <%= f.text_area :text %>
+    <div class="form-text">
+      <%= f.label :text, "絵の説明、コメント" %>
+      <%= f.text_area :text %>
+    </div>
 
-  <%= f.collection_select :originator_id, User.all.where.not(id: current_user.id), :id , :nickname, include_blank: "ユーザーを選択して下さい" %>
+    <div class="form-list">
+        <%= f.collection_select :originator_id, User.all.where.not(id: current_user.id), :id , :nickname, include_blank: "ユーザーを選択して下さい",class: "browser-default" %>
+    </div>
 
-  <%= f.submit "投稿する！" %>
-<% end %>
+    <div class="button">
+        <%= f.submit "投稿する！" ,class: "form-button"%>
+    </div>
+  <% end %>
+</div>
