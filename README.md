@@ -23,7 +23,8 @@ BoiledEggは画像投稿・共有ができるアプリケーションです。<b
 ## 📱機能
 <details>
 <summary>このアプリケーションで可能なこと</summary>
-![マイページ](https://gyazo.com/5503ea0864a2b63969ed66010bd276f0)
+![マイページ](https://gyazo.com/5503ea0864a2b63969ed66010bd276f0.jpg)
+
 ◎ユーザー登録機能<br>
 ◎画像投稿機能<br>
 ◎コメント機能<br>
