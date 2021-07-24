@@ -39,9 +39,9 @@ BoiledEggは画像投稿・共有ができるアプリケーションです。<b
 
 <br>
 
-## 📚課題
+## 📚今後の課題
 <details>
-<summary>今後実装・編集したい機能</summary>
+<summary>改善できる部分・問題点</summary>
 ◎！！コラボ作品投稿機能のmaterialize対応<br>
 ・materializeとの相性の問題で、「発案者」のプルダウンメニューが表示されていない<br>
 ◎エラーメッセージをflashメッセージ化する<br>
